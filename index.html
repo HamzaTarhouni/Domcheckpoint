@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <style>
+    /* Custom CSS for styling the buttons */
+    .quantity-button {
+      background-color: blue;
+      color: white;
+    }
+    
+    .favorite-button {
+      color: grey;
+    }
+
+    .favorite-button.active {
+      color: red;
+    }
+    
+    /* Adjust card heights to make them the same */
+    .card {
+      height: 100%;
+    }
+    
+    /* Ensure images maintain their aspect ratio */
+    .card-img-top {
+      object-fit: cover;
+      height: 200px; /* Adjust this value as needed */
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+
+<img src="data:image/jpeg;base64,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" alt="">            <div class="card-body">
+            <h5 class="card-title">Product Name 1</h5>
+            <p class="card-text">Price: $20.00</p>
+            <div class="input-group mb-3">
+              <button class="btn quantity-button" type="button" onclick="updateQuantity(-1)">-</button>
+              <input type="text" class="form-control text-center quantity" value="1" id="qte">
+              <button class="btn quantity-button" type="button" onclick="updateQuantity(1)">+</button>
+            </div>
+            <button class="btn btn-primary">Add to Cart</button>
+            <button class="btn favorite-button" onclick="toggleFavorite(this)">&#10084;</button>
+          </div>
+        </div>
+      </div>
+      <!-- Add more product cards here -->
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-4">
+        <h4>Total Price: <span id="totalPrice">$20.00</span></h4>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const quantityButtons = document.querySelectorAll('.quantity-button');
+    const quantityInput = document.querySelector('.quantity');
+    const totalPriceSpan = document.getElementById('totalPrice');
+
+    function updateTotalPrice() {
+      let total = 0;
+      document.querySelectorAll('.card').forEach(card => {
+        const price = parseFloat(card.querySelector('.card-text').textContent.split('$')[1]);
+        const quantity = parseInt(card.querySelector('.quantity').value);
+        total += price * quantity;
+      });
+      totalPriceSpan.textContent = '$' + total.toFixed(2);
+    }
+
+    function toggleFavorite(button) {
+      button.classList.toggle('active');
+    }
+
+    function updateQuantity(change) {
+      let currentValue = parseInt(quantityInput.value);
+      if (currentValue + change >= 1) {
+        quantityInput.value = currentValue + change;
+        updateTotalPrice();
+      }
+    }
+
+    quantityButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        updateTotalPrice();
+      });
+    });
+  </script>
+</body>
+</html>
